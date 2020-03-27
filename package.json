@@ -1,0 +1,34 @@
+{
+  "name": "drajulia-sdk-utils",
+  "jest": {
+    "verbose": true,
+    "roots": [
+      "test/"
+    ]
+  },
+  "version": "1.0.0",
+  "description": "Dra Julia SDK utils",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --progress --colors --watch",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": "github:byndcloud/drajulia-sdk-utils",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.1.0",
+    "jest": "^24.9.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4"
+  }
+}
