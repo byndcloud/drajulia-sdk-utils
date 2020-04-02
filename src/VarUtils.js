@@ -76,4 +76,39 @@ export default class VarUtils {
             return completeVarName;
         }
     }
+
+    /**
+     *
+     * @param {String} completeVarName The complete name for this variable which is contained in the docx file. Ex.: {{varName}}
+     */
+    getVarIdentifier(completeVarName) {
+        if (completeVarName.startsWith('_gen')) {
+            return 'gênero';
+        } else if (completeVarName.startsWith('_num')) {
+            return 'número';
+        } else if (completeVarName.startsWith('_real')) {
+            return 'real';
+        } else if (completeVarName.startsWith('_dat')) {
+            return 'data';
+        } else if (completeVarName.startsWith('_sel')) {
+            return 'seleção';
+        } else if (
+            completeVarName.startsWith('IMAGE') &&
+            completeVarName.endsWith('()')
+        ) {
+            return 'imagem';
+        } else if (completeVarName.startsWith('_cpf')) {
+            return 'cpf';
+        } else if (completeVarName.startsWith('_tel')) {
+            return 'tel';
+        } else if (completeVarName.startsWith('_cep')) {
+            return 'cep';
+        } else if (completeVarName.startsWith('@tabela')) {
+            return 'tabela';
+        } else if (completeVarName.startsWith('@topic')) {
+            return 'tópico';
+        } else {
+            return '_norm';
+        }
+    }
 }
