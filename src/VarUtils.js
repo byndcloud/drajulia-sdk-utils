@@ -54,13 +54,20 @@ export default class VarUtils {
             } = /IMAGE\s+(?<variavel>.+)[(][)]/gm.exec(completeVarName);
             return variavel;
         } else if (completeVarName.startsWith('_cpf')) {
-            let variavel = completeVarName.replace(/\s+/g, '');
+            let variavel = completeVarName.substring(4, completeVarName.length)
+            variavel = variavel.trim()
+            return variavel;
+        } else if (completeVarName.startsWith('_cnpj')) {
+            let variavel = completeVarName.substring(5, completeVarName.length)
+            variavel = variavel.trim()
             return variavel;
         } else if (completeVarName.startsWith('_tel')) {
-            let variavel = completeVarName.replace(/\s+/g, '');
+            let variavel = completeVarName.substring(4, completeVarName.length)
+            variavel = variavel.trim()
             return variavel;
         } else if (completeVarName.startsWith('_cep')) {
-            let variavel = completeVarName.replace(/\s+/g, '');
+            let variavel = completeVarName.substring(4, completeVarName.length)
+            variavel = variavel.trim()
             return variavel;
         } else if (completeVarName.startsWith('@tabela')) {
             let variavel = completeVarName
@@ -99,6 +106,8 @@ export default class VarUtils {
             return 'imagem';
         } else if (completeVarName.startsWith('_cpf')) {
             return 'cpf';
+        } else if (completeVarName.startsWith('_cnpj')) {
+            return 'cnpj';
         } else if (completeVarName.startsWith('_tel')) {
             return 'tel';
         } else if (completeVarName.startsWith('_cep')) {
